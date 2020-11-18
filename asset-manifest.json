@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ncco-frontend-spa-demo/static/css/main.66f254b0.chunk.css",
+    "main.js": "/ncco-frontend-spa-demo/static/js/main.6e776d1e.chunk.js",
+    "main.js.map": "/ncco-frontend-spa-demo/static/js/main.6e776d1e.chunk.js.map",
+    "runtime-main.js": "/ncco-frontend-spa-demo/static/js/runtime-main.b59149e5.js",
+    "runtime-main.js.map": "/ncco-frontend-spa-demo/static/js/runtime-main.b59149e5.js.map",
+    "static/js/2.b7a2f5d8.chunk.js": "/ncco-frontend-spa-demo/static/js/2.b7a2f5d8.chunk.js",
+    "static/js/2.b7a2f5d8.chunk.js.map": "/ncco-frontend-spa-demo/static/js/2.b7a2f5d8.chunk.js.map",
+    "static/js/3.a5869e97.chunk.js": "/ncco-frontend-spa-demo/static/js/3.a5869e97.chunk.js",
+    "static/js/3.a5869e97.chunk.js.map": "/ncco-frontend-spa-demo/static/js/3.a5869e97.chunk.js.map",
+    "index.html": "/ncco-frontend-spa-demo/index.html",
+    "static/css/main.66f254b0.chunk.css.map": "/ncco-frontend-spa-demo/static/css/main.66f254b0.chunk.css.map",
+    "static/js/2.b7a2f5d8.chunk.js.LICENSE.txt": "/ncco-frontend-spa-demo/static/js/2.b7a2f5d8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b59149e5.js",
+    "static/js/2.b7a2f5d8.chunk.js",
+    "static/css/main.66f254b0.chunk.css",
+    "static/js/main.6e776d1e.chunk.js"
+  ]
+}
