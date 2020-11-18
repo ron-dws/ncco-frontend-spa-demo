@@ -1,15 +1,37 @@
-import {React, useContext} from "react";
+import { React, useContext, useEffect} from "react";
 import { LoginContext } from "../Contexts/LoginContext.js";
 import { MessageResponseContext } from "../Contexts/MessageResponseContext.js";
 import { UserLoginContext } from "../Contexts/UserLoginContext.js";
 import {Header} from './Header.js';
+import { Link } from 'react-router-dom';
+import Axios from "axios";
 
 export const Login = () => {
     const [ loginResult, setLoginResult ] = useContext(LoginContext);
     const [ userInfo, setUserInfo ] = useContext(UserLoginContext);
     const [ responseMssResult, setResponseMssResult ] = useContext(MessageResponseContext);
 
+    useEffect(()=>{
+
+      //animate inputs when the page load
+       setTimeout(() => {
+           animate_input();
+        },2000);  
+      
+      });
+
+   const animate_input = () => {
+       const list_item1 = document.getElementsByClassName("first_list");
+
+       for(let i = 0; i < list_item1.length; i++){
+        list_item1[i].style.animation = `list_animation .${i}s .${i+3}s forwards`;
+      }
+    }
+
     const loginCheck = (e)=>{
+        const url = "";
+
+     
         e.preventDefault();
         const email = document.querySelector('input[name="email"]').value;
         const password = document.querySelector('input[name="password"]').value;
@@ -30,22 +52,37 @@ export const Login = () => {
         if(result_login === test_cust){
           //success login for simple user
           //alert(email + "  " + password);
-          setLoginResult({getLogin: 'custSucc' });
+          setLoginResult({ getLogin: 'custSucc' });
 
           //get cust data and record (will come from endpoint)
           setUserInfo({fn: 'Scott', ln: 'Akondjo', email:'wank@yah.com', addresse: '304 Mary neet', city:'ST CLOUD', state:'MN', zip:'56305'});
           
           setResponseMssResult("You have been successfully logged in");
-              
+          
               //display message only for 3 seconds
               const display_reg_mss = document.getElementById("p-mss-display");
               display_reg_mss.style.color = "green";
+              display_reg_mss.padding = "10px";
+              display_reg_mss.border = "1px solid green";
               display_reg_mss.style.transition = "1s ease";
               display_reg_mss.style.display = "block";
-              setTimeout(()=>{
-                  display_reg_mss.style.display = "none";
-              },5000);
+              
           //window.location.assign("/clientslist"); //redirect to the clientslist component
+          const displayMessage = (callback) => {
+            setTimeout(()=>{
+              display_reg_mss.style.display = "none";
+              callback();
+           },4000);
+          }
+          
+          const redirectToSuccess = () => {
+             //Redirect to the Success component
+             const btnSuccess = document.getElementsByClassName("btn-success");
+             btnSuccess[0].click();
+          }
+          
+          //call the function to redirect to the success after 5s
+          displayMessage(redirectToSuccess);
                     
         }else if(result_login === test_admin){
           //alert("admin login");
@@ -54,16 +91,18 @@ export const Login = () => {
         }else {
           setLoginResult({getLogin: 'no'});
 
-          setResponseMssResult("Sorry! We could not log you in");
+          setResponseMssResult("Sorry, We could not log you in!");
                       
           //display message only for 3 seconds
           const display_reg_mss = document.getElementById("p-mss-display");
           display_reg_mss.style.color = "red";
           display_reg_mss.style.transition = "1s ease";
+          display_reg_mss.padding = "10px";
+          display_reg_mss.border = "1px solid red";
           display_reg_mss.style.display = "block";
           setTimeout(()=>{
               display_reg_mss.style.display = "none";
-          },5000);
+          },4000);
 
         }
     
@@ -104,7 +143,7 @@ export const Login = () => {
   }
 
     return(
-        <div className="animate-bottom">
+        <div className="animate-bottom wp-project-card">
          <div className="home-container">
           <Header />
           <p id="p-mss-display" className="p-error-mss">{ responseMssResult }</p>
@@ -112,11 +151,15 @@ export const Login = () => {
             
             <form onSubmit={ (e) => loginCheck(e) }>
               
-                <input id="email" className="input-form" type="text" name="email"  placeholder="Enter your email" /><br/>
+                <input id="email" className="input-form wp-input first_list" type="text" name="email"  placeholder="Enter your email" /><br/>
                 <div id="validate_log_email"><span>* please enter your email</span></div>
-                <input id="ps" className="input-form" type="password" name="password" placeholder="Enter your Password" /><br/>
+                <input id="ps" className="input-form wp-input first_list" type="password" name="password" placeholder="Enter your Password" /><br/>
                 <div id="validate_log_pass"><span>* please enter your password</span></div>
-                <button className="btn-login" type="submit">Log In</button>
+                <button className="btn-login first_list" type="submit">Log In</button><br/>
+
+                <Link to="/Success">
+                  <button className="btn-success" style={{ display: "none" }} name="success">Sucess</button>
+                </Link>
 
             </form>
            </div>

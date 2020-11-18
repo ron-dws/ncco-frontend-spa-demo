@@ -7,6 +7,6 @@ export const LoginProvider = (props) => {
     return(
         <LoginContext.Provider value = {[loginResult, setLoginResult]}>
             {props.children}
-        </LoginContext.Provider>
+        </LoginContext.Provider>  
     )
 }
