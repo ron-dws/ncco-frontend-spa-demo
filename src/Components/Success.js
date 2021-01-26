@@ -20,14 +20,10 @@ export const Success = () => {
   
      function IfLogged() {
        if( loginResult.getLogin == "no" ){
-           //redirect to the home page if the cart is empty
-           //window.location.href = "/reactResto";
+           //Redirect to the login module (Home)
            const backHome = document.getElementById("btn-back-on-login");
            backHome.click();
         }else{
-          //Display the component
-          //Animate the main title and button when component load
-          //addh1class();
           return;
         }
       }

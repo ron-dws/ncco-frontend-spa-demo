@@ -24,7 +24,7 @@ export const Login = () => {
        const list_item1 = document.getElementsByClassName("first_list");
 
        for(let i = 0; i < list_item1.length; i++){
-        list_item1[i].style.animation = `list_animation .${i}s .${i+3}s forwards`;
+        list_item1[i].style.animation = `list_animation .${i+4}s .${i+5}s forwards`;
       }
     }
 
@@ -71,6 +71,11 @@ export const Login = () => {
           const displayMessage = (callback) => {
             setTimeout(()=>{
               display_reg_mss.style.display = "none";
+
+              //delete successful message so the back btn on the browser doesn't display it
+              setResponseMssResult(" ");
+
+              //Redirect to the Success component
               callback();
            },4000);
           }
@@ -81,7 +86,7 @@ export const Login = () => {
              btnSuccess[0].click();
           }
           
-          //call the function to redirect to the success after 5s
+          //call the function to redirect to the success module after 4s
           displayMessage(redirectToSuccess);
                     
         }else if(result_login === test_admin){

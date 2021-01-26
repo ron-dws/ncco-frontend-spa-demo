@@ -17,7 +17,7 @@ const App = () => {
             <Switch>
               <Route exact path="/" component={ Login } /> 
               <Route path="/Success" component={ Success } />
-              <Route path="*" component={ () => {return( <h1 className="h1-error-page">Processing Error</h1>)}} />
+              <Route path="*" component={ () => {return( <h1 className="h1-error-page">404 Page not found</h1>)}} />
             </Switch> 
           </MessageResponseProvider>
         </LoginProvider>
