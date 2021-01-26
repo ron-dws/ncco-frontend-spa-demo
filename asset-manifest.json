@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ncco-frontend-spa-demo/static/css/main.7d4e8c7b.chunk.css",
-    "main.js": "/ncco-frontend-spa-demo/static/js/main.559667b0.chunk.js",
-    "main.js.map": "/ncco-frontend-spa-demo/static/js/main.559667b0.chunk.js.map",
+    "main.js": "/ncco-frontend-spa-demo/static/js/main.7f830376.chunk.js",
+    "main.js.map": "/ncco-frontend-spa-demo/static/js/main.7f830376.chunk.js.map",
     "runtime-main.js": "/ncco-frontend-spa-demo/static/js/runtime-main.14b28ba9.js",
     "runtime-main.js.map": "/ncco-frontend-spa-demo/static/js/runtime-main.14b28ba9.js.map",
     "static/js/2.1539be74.chunk.js": "/ncco-frontend-spa-demo/static/js/2.1539be74.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.14b28ba9.js",
     "static/js/2.1539be74.chunk.js",
     "static/css/main.7d4e8c7b.chunk.css",
-    "static/js/main.559667b0.chunk.js"
+    "static/js/main.7f830376.chunk.js"
   ]
 }
